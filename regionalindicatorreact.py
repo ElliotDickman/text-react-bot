@@ -6,7 +6,7 @@ intents.message_content = True
 
 client = discord.Client(intents=intents)
 
-token = os.environ.get('APP_TOKEN')
+token = os.getenv('APP_TOKEN')
 
 @client.event
 async def on_message(message):
