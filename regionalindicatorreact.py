@@ -30,7 +30,9 @@ async def on_message(message):
     
     if "cool" in message.content.lower() and not hasReacted:
         cool_emoji = "\N{Squared Cool}"  # This is the Unicode character for the cool emoji
+        beans_emoji = "🫘"
         await message.add_reaction(cool_emoji)
+        await message.add_reaction(beans_emoji)
         hasReacted = True
     
     if "yee haw" in message.content.lower() and not hasReacted:
