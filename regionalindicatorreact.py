@@ -24,6 +24,20 @@ async def on_message(message):
     if message.author == client.user:
         return
     
+    if "cool" in message.content.lower():
+        cool_emoji = "\N{Squared Cool}"  # This is the Unicode character for the cool emoji
+        await message.add_reaction(cool_emoji)
+    
+    if "yee haw" in message.content.lower():
+        cowboy_emoji = "\N{Face with Cowboy Hat}"  # This is the Unicode character for the cool emoji
+        await message.add_reaction(cowboy_emoji)
+
+    if message.content.lower() == "boo":
+        ghost_emoji = "👻"  # This is the Unicode character for the cool emoji
+        down_emoji = "\N{Thumbs Down Sign}"
+        await message.add_reaction(down_emoji)
+        await message.add_reaction(ghost_emoji)
+
     # Get the unique alphanumeric characters in the message
     unique_chars = set(filter(lambda x: x.isalnum() or x.isspace(), message.content))
     
