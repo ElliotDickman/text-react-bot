@@ -35,7 +35,7 @@ async def on_message(message):
         await message.add_reaction(beans_emoji)
         hasReacted = True
     
-    if "yee haw" in message.content.lower() and not hasReacted:
+    if ("yee haw" in message.content.lower() or "yeehaw" in message.content.lower()) and not hasReacted:
         cowboy_emoji = "\N{Face with Cowboy Hat}"
         await message.add_reaction(cowboy_emoji)
         hasReacted = True
