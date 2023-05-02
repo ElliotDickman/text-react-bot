@@ -6,6 +6,8 @@ intents.message_content = True
 
 client = discord.Client(intents=intents)
 
+token = os.environ.get('APP_TOKEN')
+
 @client.event
 async def on_message(message):
 
@@ -40,5 +42,4 @@ async def on_message(message):
                 # React with the emoji
                 await message.add_reaction(emoji)
 
-# Replace "TOKEN" with your bot's token
-client.run("MTEwMzAzODQzNjc4NjU3MzQ5Mw.GAmIFC.SOxRC8dAdbl-JLZbMKbuIsf3RTjL2rRPAckhmk")
+client.run(token)
