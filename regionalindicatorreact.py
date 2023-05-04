@@ -23,7 +23,7 @@ async def on_message(message):
     channel = message.channel.id
 
     # Only process messages in guilds with names starting with "anim-"
-    if not message.channel.name.startswith("anim-"):
+    if not message.channel.name.startswith("anim-") and not message.channel.name == "off-topic":
         return
 
     print(f"Received message: {message.content}")
@@ -81,11 +81,14 @@ async def on_message(message):
             return
 
 
-
     #####
     # Emotes
     #####
     
+    # only emote in anim
+    if not message.channel.name.startswith("anim-"):
+        return
+
     if "cool" in message.content.lower() and not hasReacted:
         cool_emoji = "\N{Squared Cool}"  # This is the Unicode character for the cool emoji
         beans_emoji = "🫘"
