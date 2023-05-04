@@ -143,7 +143,8 @@ async def on_message(message):
         corn6 = discord.utils.get(message.guild.emojis, name="cornHappy")
         corn7 = discord.utils.get(message.guild.emojis, name="cornOO")
         corn8 = discord.utils.get(message.guild.emojis, name="corn_oog")
-        all_corns = [corn1, corn2, corn3, corn4, corn5, corn6, corn7, corn8]
+        corn9 = discord.utils.get(message.guild.emojis, name="cornShook")
+        all_corns = [corn1, corn2, corn3, corn4, corn5, corn6, corn7, corn8, corn9]
 
         this_corn = random.choice(all_corns)
 
