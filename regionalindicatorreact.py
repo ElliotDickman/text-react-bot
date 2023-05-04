@@ -19,7 +19,8 @@ async def on_message(message):
 
     hasReacted = False
 
-    print(message)
+    print(message.channel.name)
+    channel = message.channel.id
 
     # Only process messages in guilds with names starting with "anim-"
     if not message.channel.name.startswith("anim-"):
@@ -51,7 +52,6 @@ async def on_message(message):
                 ]
             )
         
-            channel = message.channel_id
             await channel.send(mapleCompletion.choices[0].message.content)
             return
         
@@ -65,7 +65,6 @@ async def on_message(message):
                 ]
             )
         
-            channel = message.channel_id
             await channel.send(cornCompletion.choices[0].message.content)
             return
         
@@ -81,7 +80,6 @@ async def on_message(message):
                 ]
             )
         
-            channel = message.channel_id
             await channel.send(storyCompletion.choices[0].message.content)
             return
 
