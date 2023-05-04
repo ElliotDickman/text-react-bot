@@ -42,7 +42,6 @@ async def on_message(message):
 
         if message.content.lower().startswith("hey maple, "):
             question = message.content.lower()[len("hey maple, "):]
-            print(message.channel_id)
             print(question)
             mapleCompletion = openai.ChatCompletion.create(
                 model="gpt-3.5-turbo",
@@ -56,7 +55,6 @@ async def on_message(message):
             return
         
         if message.content.lower().startswith("hey corn, ") or message.content.lower().startswith("hey cornelius, "):
-            print(message.channel_id)
             print("Corn")
             cornCompletion = openai.ChatCompletion.create(
                 model="gpt-3.5-turbo",
@@ -70,7 +68,6 @@ async def on_message(message):
         
         if message.content.lower().startswith("hey bot, "):
             question = message.content.lower()[len("hey bot, "):]
-            print(message.channel_id)
             print(question)
             storyCompletion = openai.ChatCompletion.create(
                 model="gpt-3.5-turbo",
