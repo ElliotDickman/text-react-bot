@@ -36,7 +36,7 @@ async def on_message(message):
     # ChatGPT responses
     #####
 
-    message.channel.send("Hello")
+    await message.channel.send("Hello")
     return
 
     prefixes = ["hey maple, ", "hey bot, ", "hey corn, ", "hey cornelius, "]
