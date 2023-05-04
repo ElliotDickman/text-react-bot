@@ -19,7 +19,7 @@ async def on_message(message):
 
     hasReacted = False
 
-    print(message.guild.name)
+    print(message)
 
     # Only process messages in guilds with names starting with "anim-"
     if not message.channel.name.startswith("anim-"):
