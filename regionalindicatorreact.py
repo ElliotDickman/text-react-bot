@@ -51,7 +51,7 @@ async def on_message(message):
                 ]
             )
         
-            await message.channel.send(mapleCompletion.choices[0].message.content)
+            await message.reply(mapleCompletion.choices[0].message.content)
             return
         
         if message.content.lower().startswith("hey corn, ") or message.content.lower().startswith("hey cornelius, "):
@@ -63,7 +63,7 @@ async def on_message(message):
                 ]
             )
         
-            await message.channel.send(cornCompletion.choices[0].message.content)
+            await message.reply(cornCompletion.choices[0].message.content)
             return
         
         if message.content.lower().startswith("hey bot, "):
@@ -77,7 +77,21 @@ async def on_message(message):
                 ]
             )
         
-            await message.channel.send(storyCompletion.choices[0].message.content)
+            await message.reply(storyCompletion.choices[0].message.content)
+            return
+        
+        if message.content.lower().startswith("hey team, "):
+            question = message.content.lower()[len("hey team, "):]
+            print(question)
+            teamCompletion = openai.ChatCompletion.create(
+                model="gpt-3.5-turbo",
+                messages=[
+                    {"role": "system", "content": storybackground},
+                    {"role": "user", "content": f'Lets play a game where you pretend to be a member of the Animation and Game Design team that worked on this story. Always answer in character as a member of this team. Your responses should have the tone of a session with the director of a film or creator of a video game. If you dont know an answer, make it up to the best of your ability. Some additional information that might be helpful is that the team consists of Senior students in the digital media program at Drexel University. Sammie is the animation project manager, and Megan is the game project manager. The rest of the animation team is Elliot, Kirsten, Emily, and Annie. The rest of the game team is Douglas, Erika, Mark, Sean, Panote, Daniel, Ethan, Irving, Jiongheng, Ruxandra, Samuel, Sarah, and Tristan. When you respond, sometimes you can choose one of these people to respond as. Remember to always stay in character as a team member. The question is: Hi there, I was wondering {question}'}
+                ]
+            )
+        
+            await message.reply(teamCompletion.choices[0].message.content)
             return
 
 
