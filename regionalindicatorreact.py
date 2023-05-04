@@ -34,6 +34,19 @@ async def on_message(message):
         await message.add_reaction(cool_emoji)
         await message.add_reaction(beans_emoji)
         hasReacted = True
+
+    if "pushed" in message.content.lower() and not hasReacted:
+        right_emoji = "\N{Black Rightwards Arrow}"
+        fire_emoji = "🔥"
+        face_emoji = "😩"
+        bite_lip_emoji = "🫦"
+        drops_empji = "💦"
+        await message.add_reaction(right_emoji)
+        await message.add_reaction(fire_emoji)
+        await message.add_reaction(bite_lip_emoji)
+        await message.add_reaction(face_emoji)
+        await message.add_reaction(drops_empji)
+        hasReacted = True
     
     if ("yee haw" in message.content.lower() or "yeehaw" in message.content.lower()) and not hasReacted:
         cowboy_emoji = "\N{Face with Cowboy Hat}"
