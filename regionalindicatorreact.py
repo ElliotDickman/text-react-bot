@@ -47,7 +47,7 @@ async def on_message(message):
                 model="gpt-3.5-turbo",
                 messages=[
                     {"role": "system", "content": storybackground},
-                    {"role": "user", "content": f'Lets play a game where you pretend to be Maple. Answer the following question as young Maple would: {question}'}
+                    {"role": "user", "content": f'Lets play a game where you pretend to be Maple. Always answer as Maple, and never break character. If you dont know the answer to a question, respond however Maple herself would respond. Answer the following question as young Maple would: {question}'}
                 ]
             )
         
