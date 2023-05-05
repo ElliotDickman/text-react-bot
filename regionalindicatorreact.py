@@ -36,7 +36,7 @@ async def on_message(message):
     # ChatGPT responses
     #####
 
-    if message.content.lower().startswitn("bot help"):
+    if message.content.lower().startswith("bot help"):
         message.reply("Hi there! I'm the Sprouting Spirit chat bot. There are a few ways to talk to me.\n\nIf you start your message with 'Hey Bot, ', I'll respond with info about the Sprouting Spirit game and animation projects.\nStarting with 'Hey Maple, ' will let you ask a question to Maple herself!\n'Hey Corn, ' or 'Hey Cornelius, ' will let you talk to Cornelius.\n\nLastly, starting with 'Hey Team, ' will allow you to ask a question to the creative and development teams behind Sprouting Spirit!\n\n\nRight now, I'm only active in the off-topic and bot-chat channels. I also don't remember earlier parts of our conversation just yet, so I won't remember things that you or I have said before.\n\n\nYou can always send 'Bot help' to see this message again.")
         return
 
