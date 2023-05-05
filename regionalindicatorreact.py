@@ -23,7 +23,7 @@ async def on_message(message):
     channel = message.channel.id
 
     # Only process messages in guilds with names starting with "anim-"
-    if not message.channel.name.startswith("anim-") and not message.channel.name == "off-topic":
+    if not message.channel.name.startswith("anim-") and not message.channel.name == "off-topic" and not message.channel.name == "bot-chat":
         return
 
     print(f"Received message: {message.content}")
