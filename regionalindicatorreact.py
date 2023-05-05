@@ -40,12 +40,12 @@ async def on_message(message):
         await message.reply("Hi there! I'm the Sprouting Spirit chat bot. There are a few ways to talk to me.\n\nIf you start your message with 'Hey Bot, ', I'll respond with info about the Sprouting Spirit game and animation projects.\nStarting with 'Hey Maple, ' will let you ask a question to Maple herself!\n'Hey Corn, ' or 'Hey Cornelius, ' will let you talk to Cornelius.\n\nLastly, starting with 'Hey Team, ' will allow you to ask a question to the creative and development teams behind Sprouting Spirit!\n\n\nRight now, I'm only active in the off-topic and bot-chat channels. I also don't remember earlier parts of our conversation just yet, so I won't remember things that you or I have said before.\n\n\nYou can always send 'Bot help' to see this message again.")
         return
 
-    prefixes = ["hey maple, ", "hey bot, ", "hey corn, ", "hey cornelius, ", "hey team, "]
+    prefixes = ["hey maple", "hey bot", "hey corn", "hey cornelius", "hey team"]
     if any(message.content.lower().startswith(prefix) for prefix in prefixes):
         storybackground = "Sprouting Spirit is an animated short film about a young girl named Maple and her imaginary friend Cornelius. As a child, Maple moves from a rural area to a big city, and is scared of the new city. The home she moves into is a rowhome with a garden attached to it. When she first moves there, she explores the garden. It is old and dilapidated, with debris, dead plants, and cardboard boxes everywhere. The garden also has a pergola fence, and an old stone fountain. When young Maple first goes into the old garden, she meets her imaginary friend Cornelius. Cornelius is a big fluffy bird-plant hybrid who looks like a pink fluffy ball with two long retractable wobbly legs. Together, Maple and Cornelius enter a magical fantasy world where objects in the garden inrpire fantastical landscapes. They first enter an imaginary flower field, with a pink sky and giant magical plants. They then enter a world where it is night and full of water, where glowing colorful plants illuminate the environment and giant lawn flamingos loom in the distance. There, Cornelius helps Maple gain the courage to jump across large rocks that protrude from the water. After this, they enter a world with giant pinwheels and paper airplanes, where Maple rides on Cornelius as they traverse the landscape. At this point, a breeze blows Maple's favorite yellow bucket hat off her head - and out of the old garden, taking her out of the fantasy imaginary world and snapping back to reality. Her hat rests against a fire hydrant on the sidewalk, but Maple is afraid to leave the safety of her garden to retrieve it. Her imaginary friend Cornelius encourages her to go out and get her hat, and she realizes that the new city isn't so scary after all. The film begins and ends with Maple as she is older and about to leave for the airport to go to college. At the beginning, she looks down at her plane ticket while standing outside the garden gate, and remembers all the events from when she first moved to the city. At the end, as young Maple steps back into the garden after getting her hat, it cuts to older Maple looking around at a rejuvinated garden and reminiscing about her adventures with her imaginary friend Cornelius. Your job is to pretend to be a writer on this story. The user may ask a question about the story, in which case you should answer based on the story. If the user asks a question that the story so far doesn't discuss, you should make up an answer as though you were writing the story yourself. Never, under any circumstances, say that the story doesn't discuss an answer that you need to provide."
 
-        if message.content.lower().startswith("hey maple, "):
-            question = message.content.lower()[len("hey maple, "):]
+        if message.content.lower().startswith("hey maple"):
+            question = message.content.lower()[len("hey maple"):]
             print(question)
             mapleCompletion = openai.ChatCompletion.create(
                 model="gpt-3.5-turbo",
@@ -58,7 +58,7 @@ async def on_message(message):
             await message.reply(mapleCompletion.choices[0].message.content)
             return
         
-        if message.content.lower().startswith("hey corn, ") or message.content.lower().startswith("hey cornelius, "):
+        if message.content.lower().startswith("hey corn") or message.content.lower().startswith("hey cornelius"):
             print("Corn")
             cornCompletion = openai.ChatCompletion.create(
                 model="gpt-3.5-turbo",
@@ -70,8 +70,8 @@ async def on_message(message):
             await message.reply(cornCompletion.choices[0].message.content)
             return
         
-        if message.content.lower().startswith("hey bot, "):
-            question = message.content.lower()[len("hey bot, "):]
+        if message.content.lower().startswith("hey bot"):
+            question = message.content.lower()[len("hey bot"):]
             print(question)
             storyCompletion = openai.ChatCompletion.create(
                 model="gpt-3.5-turbo",
@@ -84,8 +84,8 @@ async def on_message(message):
             await message.reply(storyCompletion.choices[0].message.content)
             return
         
-        if message.content.lower().startswith("hey team, "):
-            question = message.content.lower()[len("hey team, "):]
+        if message.content.lower().startswith("hey team"):
+            question = message.content.lower()[len("hey team"):]
             print(question)
             teamCompletion = openai.ChatCompletion.create(
                 model="gpt-3.5-turbo",
