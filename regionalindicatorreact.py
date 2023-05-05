@@ -31,6 +31,8 @@ async def on_message(message):
     # Ignore messages from the bot itself
     if message.author == client.user:
         return
+    
+    print(message.author)
 
     #####
     # ChatGPT responses
