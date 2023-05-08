@@ -189,7 +189,7 @@ async def on_message(message):
         hasReacted = True
 
     # Get the unique alphanumeric characters in the message
-    unique_chars = set(filter(lambda x: x.isalnum() or x.isspace(), message.content))
+    unique_chars = set(filter(lambda x: x.isalnum() or x.isspace(), message.content.lower()))
     
     if len(unique_chars) == len(message.content) and not hasReacted:
         # Only react with alphanumeric characters
