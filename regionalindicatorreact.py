@@ -21,17 +21,6 @@ async def on_message(message):
 
     print(message)
     channel = message.channel.id
-
-    if message.author.name == "CrypticZee":
-        corn1 = discord.utils.get(message.guild.emojis, name="christianFlex")
-        corn2 = discord.utils.get(message.guild.emojis, name="schleep")
-        corn3 = discord.utils.get(message.guild.emojis, name="scrawnyKnife")
-        all_corns = [corn1, corn2, corn3]
-
-        this_corn = random.choice(all_corns)
-
-        if this_corn:
-            await message.add_reaction(this_corn)
         
 
     # Only process messages in guilds with names starting with "anim-"
